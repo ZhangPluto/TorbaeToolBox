@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>托托的工具箱</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <noscript>
+        <link rel="stylesheet" th:href="@{/css/noscript.css}"/>
+    </noscript>
+    <link rel="stylesheet" th:href="@{/css/additional.css}">
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<!--<header id="header">-->
+<!--    <a th:href="@{index}" class="title">托托的工具箱</a>-->
+<!--    <nav>-->
+<!--        <ul>-->
+<!--            <li><a th:href="@{index}" class="active">主页</a></li>-->
+<!--            <li><a th:href="@{generic}">托托币</a></li>-->
+<!--            <li class="nav-item dropdown">-->
+<!--                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"-->
+<!--                   data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                    随机万物系统-->
+<!--                </a>-->
+<!--                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                    <li><a class="dropdown-item" th:href="@{generic}">随机数</a></li>-->
+<!--                    <li><a class="dropdown-item" href="#">随机元素</a></li>-->
+<!--                    <li>-->
+<!--                        <hr class="dropdown-divider">-->
+<!--                    </li>-->
+<!--                    <li><a class="dropdown-item" href="#">随机食物</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li><a th:href="@{logIn}">登录</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</header>-->
+
+<!--Version 2-->
+<!--header-->
+<header id="header">
+    <nav class="navbar navbar-expand-lg" style="background-color: #5e42a6">
+        <div class="container-fluid">
+            <a th:href="@{index}" class="title">托托的工具箱</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a th:href="@{index}" class="nav-link active" aria-current="page">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{generic}" class="nav-link">托托币</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            随机万物系统
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" th:href="@{generic}">随机数</a></li>
+                            <li><a class="dropdown-item" href="#">随机元素</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">随机食物</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{logIn}" class="nav-link">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <!-- Main -->
+    <section id="main" class="wrapper">
+        <div class="inner">
+            <h1 class="major">你闯入了我的秘密基地</h1>
+            <h2>这是个啥</h2>
+            <p>这是一个小工具整合网站，目的是为了解决双人关系之间的矛盾。现在的工具还很少，但今后它将变得越来越沙雕，但也越来越强</p>
+            <h2>啥矛盾？</h2>
+            <p>举个例子，当你和你女友一起躺在了床上，但发现没有关灯，这个时候谁去关？</p>
+            <p>当你不知道今天吃什么但又有几个备选项</p>
+            <p>甚至是当你要甩一个随机数</p>
+            <p>这里不光有一些小工具，还有一种全新的币种：托托币</p>
+            <h2>啥是托托币</h2>
+            <p>托托币是一种我在生活中和我女友一起发明的币种，在网站中完成注册后即可使用。注册后，你将拥有初始的五枚托托币，它来之不易，请谨慎使用</p>
+            <p>光有托托币是没用的，你无法在任何地方使用它，直到你找到了你的一个好友：他可以是你的爱人，你的男/女朋友，你的闺蜜，你的死党，但记住，一个账号只可以有一个好友</p>
+            <p>当你添加了你的好友后，你就可以通过付款的方式让你的他/她为你做事，你们只需要：</p>
+            <p>商量好金额（最低0.5），通过网页向对方转账，让对方为你完成你想要她/他帮你完成的事情</p>
+            <p>请谨慎，再次提醒，您只有五个托托币，花完就只能任对方摆布了</p>
+            <p>当然，这不是硬性要求，即使您向对方支付了托托币但对方不愿意做，他/她依旧有权利可以拒绝您，您只需要要求退款即可</p>
+            <h2>最后，玩的开心，</h2>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+    <div class="inner">
+        <ul class="menu">
+            <li>&copy; Created by Pluto.</li>
+        </ul>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/js/browser.min.js}"></script>
+<script th:src="@{/js/breakpoints.min.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>

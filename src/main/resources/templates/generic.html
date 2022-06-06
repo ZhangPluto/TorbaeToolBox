@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Torbae's Tool Box</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<noscript><link rel="stylesheet" th:href="@{/css/noscript.css}" /></noscript>
+	<style>
+		.dropdown-menu.show{
+			--bs-dropdown-link-hover-bg: #543899;
+		}
+		.dropdown-menu.show{
+			--bs-dropdown-bg: #543899;
+		}
+	</style>
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<header id="header">
+	<a th:href="@{#}" class="title">Torbae's Tool Box</a>
+	<nav>
+		<ul>
+			<li><a th:href="@{#}" class="active">Home</a></li>
+			<li><a th:href="@{Coin}">Torbae Coin</a></li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+				   data-bs-toggle="dropdown" aria-expanded="false">
+					Random System
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<li><a class="dropdown-item" href="#">Random number</a></li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+					<li><a class="dropdown-item" href="#">Random Elements</a></li>
+				</ul>
+			</li>
+			<li><a th:href="@{elements}">Log In</a></li>
+		</ul>
+	</nav>
+</header>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Main -->
+	<section id="main" class="wrapper">
+		<div class="inner">
+			<h1 class="major">这是个啥</h1>
+			<p>这是一个小工具整合网站，目的是为了解决双人关系之间的矛盾</p>
+		</div>
+	</section>
+
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper alt">
+	<div class="inner">
+		<ul class="menu">
+			<li>&copy; Untitled. All rights reserved.</li>
+		</ul>
+	</div>
+</footer>
+
+<!-- Scripts -->
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.scrollex.min.js}"></script>
+<script th:src="@{/js/jquery.scrolly.min.js}"></script>
+<script th:src="@{/js/browser.min.js}"></script>
+<script th:src="@{/js/breakpoints.min.js}"></script>
+<script th:src="@{/js/util.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
