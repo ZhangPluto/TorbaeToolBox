@@ -29,9 +29,9 @@ public class IndexController {
     }
 
 
-    @GetMapping("/generic")
+    @GetMapping("/tortorCoin")
     public String generic(){
-        return "generic";
+        return "tortorCoin";
     }
 
     @GetMapping("/elements")
@@ -47,6 +47,11 @@ public class IndexController {
     @RequestMapping("/signIn")
     public String signIn(){
         return "signIn";
+    }
+
+    @GetMapping("/randomNumber")
+    public String randomNumber(){
+        return "randomNumber";
     }
 
 }

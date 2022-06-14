@@ -55,7 +55,7 @@
                         <a th:href="@{index}" class="nav-link active" aria-current="page">主页</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{generic}" class="nav-link">托托币</a>
+                        <a th:href="@{tortorCoin}" class="nav-link">托托币</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
@@ -63,7 +63,7 @@
                             随机万物系统
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" th:href="@{generic}">随机数</a></li>
+                            <li><a class="dropdown-item" th:href="@{randomNumber}">随机数</a></li>
                             <li><a class="dropdown-item" href="#">随机元素</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -84,6 +84,7 @@
 <div id="wrapper">
     <!-- Main -->
     <section id="main" class="wrapper">
+        <img th:src="@{/images/indexIllustration.png}" class="rounded mx-auto d-block" alt="Icon Image Not Found" id="pageIllustration">
         <div class="inner">
             <h1 class="major">你闯入了我的秘密基地</h1>
             <h2>这是个啥</h2>
@@ -100,7 +101,7 @@
             <p>商量好金额（最低0.5），通过网页向对方转账，让对方为你完成你想要她/他帮你完成的事情</p>
             <p>请谨慎，再次提醒，您只有五个托托币，花完就只能任对方摆布了</p>
             <p>当然，这不是硬性要求，即使您向对方支付了托托币但对方不愿意做，他/她依旧有权利可以拒绝您，您只需要要求退款即可</p>
-            <h2>最后，玩的开心，</h2>
+            <h2>最后，玩的开心。</h2>
         </div>
     </section>
 
