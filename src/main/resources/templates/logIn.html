@@ -1,109 +1,36 @@
-<!DOCTYPE HTML>
-<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-<head>
-    <title>托托的工具箱</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/css/main.css}"/>
-    <noscript>
-        <link rel="stylesheet" th:href="@{/css/noscript.css}"/>
-    </noscript>
-    <link rel="stylesheet" th:href="@{/css/additional.css}">
+<head th:replace="/header :: head">
 </head>
-<body class="is-preload">
-
-<!-- Header -->
-<!--<header id="header">-->
-<!--    <a th:href="@{index}" class="title">托托的工具箱</a>-->
-<!--    <nav>-->
-<!--        <ul>-->
-<!--            <li><a th:href="@{index}" class="active">主页</a></li>-->
-<!--            <li><a th:href="@{generic}">托托币</a></li>-->
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"-->
-<!--                   data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                    随机万物系统-->
-<!--                </a>-->
-<!--                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                    <li><a class="dropdown-item" th:href="@{generic}">随机数</a></li>-->
-<!--                    <li><a class="dropdown-item" href="#">随机元素</a></li>-->
-<!--                    <li>-->
-<!--                        <hr class="dropdown-divider">-->
-<!--                    </li>-->
-<!--                    <li><a class="dropdown-item" href="#">随机食物</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li><a th:href="@{logIn}">登录</a></li>-->
-<!--        </ul>-->
-<!--    </nav>-->
-<!--</header>-->
-
-<!--Version 2-->
-<!--header-->
-<header id="header">
-    <nav class="navbar navbar-expand-lg" style="background-color: #5e42a6">
-        <div class="container-fluid">
-            <a th:href="@{index}" class="title">托托的工具箱</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a th:href="@{index}" class="nav-link">主页</a>
-                    </li>
-                    <li class="nav-item">
-                        <a th:href="@{generic}" class="nav-link">托托币</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            随机万物系统
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" th:href="@{generic}">随机数</a></li>
-                            <li><a class="dropdown-item" href="#">随机元素</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">随机食物</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a th:href="@{logIn}" class="nav-link active" aria-current="page">登录</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<nav th:replace="/header :: menu(4)">
+</nav>
 <!-- Wrapper -->
 <div id="wrapper">
 
     <!-- Main -->
     <section id="main" class="wrapper">
+        <img th:src="@{/images/logInIllustration.png}" class="rounded mx-auto d-block" alt="Icon Image Not Found"
+             id="pageIllustration">
         <div class="inner">
+
             <h1 class="major">登录</h1>
             <!-- Form -->
             <section>
-                <form method="post">
+                <form method="get">
                     <div class="row gtr-uniform">
                         <h3>邮箱</h3>
                         <div class="col-6 col-12-xsmall">
                             <input type="text" name="demo-name" id="demo-name" value="" placeholder="邮箱"/>
                         </div>
+
                         <h3>密码</h3>
                         <div class="col-6 col-12-xsmall">
                             <input type="password" name="demo-email" id="demo-email" value="" placeholder="密码"/>
                         </div>
+
                         <div class="col-12">
                             <ul class="actions">
                                 <li><input type="submit" value="登录" class="primary" th:formaction="@{/logIn}"/></li>
-                                <li><input type="reset" value="重新输入" /></li>
+                                <li><input type="reset" value="重新输入"/></li>
                                 <li><input type="submit" th:formaction="@{/signIn}" value="没有账号？在这里注册"/></li>
-
                             </ul>
                         </div>
                     </div>
@@ -115,24 +42,4 @@
 
 </div>
 
-<!-- Footer -->
-<footer id="footer" class="wrapper alt">
-    <div class="inner">
-        <ul class="menu">
-            <li>&copy; Created by Pluto.</li>
-        </ul>
-    </div>
-</footer>
-
-<!-- Scripts -->
-<script th:src="@{/js/jquery.min.js}"></script>
-<script th:src="@{/js/jquery.scrollex.min.js}"></script>
-<script th:src="@{/js/jquery.scrolly.min.js}"></script>
-<script th:src="@{/js/browser.min.js}"></script>
-<script th:src="@{/js/breakpoints.min.js}"></script>
-<script th:src="@{/js/util.js}"></script>
-<script th:src="@{/js/main.js}"></script>
-<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
-
-</body>
-</html>
+<footer th:replace="/footer"></footer>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:fragment="head">
+    <title>托托的工具箱</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <noscript>
+        <link rel="stylesheet" th:href="@{/css/noscript.css}"/>
+    </noscript>
+    <link rel="stylesheet" th:href="@{/css/additional.css}">
+</head>
+<body class="is-preload">
+<header id="header"  th:fragment="menu(n)">
+    <nav class="navbar navbar-expand-lg" style="background-color: #5e42a6">
+        <div class="container-fluid">
+            <a th:href="@{/index}" class="title">托托的工具箱</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+<!--                        <a th:href="@{/index}" th:classappend="${n==1?}?'nav-link active'" aria-current="page">主页</a>-->
+                        <a th:href="@{/index}" class="nav-link" th:classappend="${n==1}?'active'">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/tortorCoin}" class="nav-link" th:classappend="${n==2}?'active'">托托币</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  th:classappend="${n==3}? 'active'" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            随机万物系统
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" th:href="@{/randomNumber}">随机数</a></li>
+                            <li><a class="dropdown-item" th:href="@{/randomElement}">随机元素</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/randomFood}">随机食物</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" >
+                        <a th:href="@{/logIn}" class="nav-link" th:classappend="${n==4}?'active'">登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+

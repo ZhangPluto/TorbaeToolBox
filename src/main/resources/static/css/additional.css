@@ -1,6 +1,6 @@
 .dropdown-menu.show {
-    --bs-dropdown-link-hover-bg: #543899;
-    --bs-dropdown-bg: #543899;
+    --bs-dropdown-link-hover-bg: #6f53a0;
+    --bs-dropdown-bg: #5E42A6;
 }
 
 .navbar-collapse {
@@ -39,6 +39,7 @@
     letter-spacing: 0.5em;
     font-size: 0.8em;
     text-align: center;
+    margin-left: -0.25em;
 }
 
 .nav-link:hover, .dropdown-item:hover {

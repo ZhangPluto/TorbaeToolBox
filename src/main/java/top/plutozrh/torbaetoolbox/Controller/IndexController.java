@@ -39,19 +39,31 @@ public class IndexController {
         return "elements";
     }
 
-    @RequestMapping("/logIn")
+    @GetMapping("/logIn")
     public String logIn(){
         return "logIn";
     }
 
-    @RequestMapping("/signIn")
+    @GetMapping("/signIn")
     public String signIn(){
         return "signIn";
     }
-
     @GetMapping("/randomNumber")
     public String randomNumber(){
         return "randomNumber";
     }
+    @GetMapping("/randomFood")
+    public String randomFood(){
+        return "randomFood";
+    }
+    @GetMapping("/randomElement")
+    public String randomElement(){
+        return "randomElement";
+    }
+    @GetMapping("/header")
+    public String header(){
+        return "header";
+    }
+
 
 }
