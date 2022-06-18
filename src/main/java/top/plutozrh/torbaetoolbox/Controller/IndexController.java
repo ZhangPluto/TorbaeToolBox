@@ -10,6 +10,7 @@ package top.plutozrh.torbaetoolbox.Controller;
  */
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,13 +31,11 @@ public class IndexController {
 
 
     @GetMapping("/tortorCoin")
-    public String generic(){
+    public String tortorCoin(Model model){
+        model.addAttribute("name","小托");
+        model.addAttribute("balance","5.0");
+        model.addAttribute("friend","Pluto");
         return "tortorCoin";
-    }
-
-    @GetMapping("/elements")
-    public String elements(){
-        return "elements";
     }
 
     @GetMapping("/logIn")
@@ -59,10 +58,6 @@ public class IndexController {
     @GetMapping("/randomElement")
     public String randomElement(){
         return "randomElement";
-    }
-    @GetMapping("/header")
-    public String header(){
-        return "header";
     }
 
 

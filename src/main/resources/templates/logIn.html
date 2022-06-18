@@ -17,15 +17,13 @@
                 <form method="get">
                     <div class="row gtr-uniform">
                         <h3>邮箱</h3>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="邮箱"/>
+                        <div class="col">
+                            <input type="text" name="logInEmail" id="logInEmail" value="" placeholder="邮箱"/>
                         </div>
-
                         <h3>密码</h3>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="password" name="demo-email" id="demo-email" value="" placeholder="密码"/>
+                        <div class="col">
+                            <input type="password" name="logInPassword" id="logInPassword" value="" placeholder="密码"/>
                         </div>
-
                         <div class="col-12">
                             <ul class="actions">
                                 <li><input type="submit" value="登录" class="primary" th:formaction="@{/logIn}"/></li>

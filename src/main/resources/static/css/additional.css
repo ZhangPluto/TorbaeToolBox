@@ -15,7 +15,7 @@
     font-weight: bold;
 }
 
-#footer .inner{
+#footer .inner {
     padding-top: 3em;
     height: 6.75em;
 }
@@ -39,7 +39,6 @@
     letter-spacing: 0.5em;
     font-size: 0.8em;
     text-align: center;
-    margin-left: -0.25em;
 }
 
 .nav-link:hover, .dropdown-item:hover {
@@ -50,31 +49,49 @@
     font-size: x-small;
 }
 
+ul li {
+    margin-left: 0;
+}
+
+ul.actions li {
+    width: 50%;
+    text-align: center;
+}
+
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary,
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    width: 100%;
+}
+
 #pageIllustration {
     padding-top: 1em;
     width: 450px;
     height: 450px;
 }
 
-@media screen and (max-width: 480px) {
-    #pageIllustration {
-        padding-top: 1em;
-        width: 300px;
-        height: 300px;
-    }
+.table {
+    --bs-table-bg: #FFBECF;
+    margin: 0 -1.5em 0 1.5em;
+    --bs-table-color: #96465C;
 }
-
 
 button:after {
     border-radius: 0;
 }
 
-h1.major{
+h1.major {
     margin: 0 0 0.5em 0;
     text-align: center;
 }
 
-hr{
+hr {
     transition: max-width 0.2s ease;
     background-image: linear-gradient(to right, #5e42a6, #b74e91);
     border-radius: 0.2em;
@@ -83,7 +100,93 @@ hr{
     opacity: 1;
 }
 
-.alert-success{
+.alert-success {
     --bs-alert-bg: #ffd4e0;
     --bs-alert-color: #be3e61;
+}
+
+#transferPart {
+    text-align: center;
+}
+
+#userBalance {
+    color: #e9a3b6;
+}
+
+#transferButton {
+    height: 10em;
+    width: 10em;
+}
+
+#CoinIllustration {
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: #96465C;
+}
+
+.btn-outline-primary {
+    --bs-btn-hover-bg: #7A658B;
+}
+
+
+@media screen and (max-width: 1200px) {
+    #transferButton {
+        height: 9em;
+        width: 9em;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #transferButton {
+        height: 8em;
+        width: 8em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #transferButton {
+        height: 10em;
+        width: 10em;
+    }
+
+    #transferPart {
+        text-align: left;
+    }
+
+    #transferPart h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    #transferButton {
+        height: 7em;
+        width: 7em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #pageIllustration {
+        padding-top: 1em;
+        width: 300px;
+        height: 300px;
+    }
+
+    .table {
+        margin: 0 1.5em 0 0.8em;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    #transferButton {
+        height: 5em;
+        width: 5em;
+    }
 }

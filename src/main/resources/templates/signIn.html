@@ -7,6 +7,7 @@
 
     <!-- Main -->
     <section id="main" class="wrapper">
+        <img th:src="@{/images/signInIllustration.png}" class="rounded mx-auto d-block" alt="Icon Image Not Found" id="pageIllustration">
         <div class="inner">
             <h1 class="major">注册</h1>
             <!-- Form -->
@@ -14,21 +15,25 @@
                 <form method="post">
                     <div class="row gtr-uniform">
                         <h3>邮箱</h3>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="邮箱"/>
+                        <div class="col">
+                            <input type="text" name="signInEmail" id="signInEmail" value="" placeholder="邮箱"/>
+                        </div>
+                        <h3>昵称</h3>
+                        <div class="col">
+                            <input type="text" name="signInUsername" id="signInUsername" value="" placeholder="昵称"/>
                         </div>
                         <h3>密码</h3>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="password" name="demo-email" id="demo-email" value="" placeholder="密码"/>
+                        <div class="col">
+                            <input type="password" name="signInPassword" id="signInPassword" value="" placeholder="密码"/>
                         </div>
                         <h3>重复密码</h3>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="password" name="demo-email" id="demo-email" value="" placeholder="重复密码"/>
+                        <div class="col">
+                            <input type="password" name="signInRedoPassword" id="signInRedoPassword" value="" placeholder="重复密码"/>
                         </div>
                         <div class="col-12">
                             <ul class="actions">
-                                <li><input type="submit" value="注册" class="primary" th:formaction="@{/logIn}"/></li>
-                                <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}"/></li>
+                                <li><input type="submit" value="注册" class="primary"  th:formaction="@{/logIn}" th:formmethod="POST"/></li>
+                                <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}" th:formmethod="GET"/></li>
                             </ul>
                         </div>
                     </div>
