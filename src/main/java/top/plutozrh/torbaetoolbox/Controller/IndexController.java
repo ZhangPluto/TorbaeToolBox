@@ -59,6 +59,4 @@ public class IndexController {
     public String randomElement(){
         return "randomElement";
     }
-
-
 }

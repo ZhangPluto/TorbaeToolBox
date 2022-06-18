@@ -1,6 +1,6 @@
-<head th:replace="/header :: head">
+<head th:replace="header :: head">
 </head>
-<nav th:replace="/header :: menu(3)">
+<nav th:replace="header :: menu(3)">
 </nav>
 <!-- Wrapper -->
 <div id="wrapper">
@@ -11,17 +11,17 @@
              id="pageIllustration">
         <div class="inner">
             <h1 class="major">
-                随机数
+                随机食物
             </h1>
             <div class="alert alert-success" role="alert">
-                <h2 class="alert-heading">欢迎使用随机数功能</h2>
-                <p>在这个页面，您将被允许输入一个起始值，一个结束值，一个生成个数。作为您辛苦输入的回报，你可以得到系统为您生成的随机数。</p>
-                <p>这里有两条规则您必须在使用时遵守：</p>
-                <p>1：起始值必须小于结束值</p>
-                <p>2：结束值-起始值必须大于生成个数</p>
+                <h2 class="alert-heading">欢迎使用随机食物功能</h2>
+                <p>该功能意在帮助那些不知道吃啥的人</p>
+                <p>这里没有规则，点按钮就行了</p>
+                <p>记住，第一次出现的答案就是最适合你的</p>
                 <hr>
-                <h3 class="alert-heading">最后，祝您在规则下玩的开心！</h3>
+                <h3 class="alert-heading">吃的开心！</h3>
             </div>
+
 
 
             <!-- Form -->
@@ -29,28 +29,32 @@
                 <form method="get">
                     <div class="row gtr-uniform">
                         <div class="col-12">
-                            <h3>起始值</h3>
-                            <input type="text" name="beginValue" value="0" th:text="${beginValue}"/>
-                        </div>
-
-                        <div class="col-12">
-                            <h3>末尾值</h3>
-                            <input type="text" name="endValue" value="0" th:text="${endValue}"/>
-                        </div>
-
-                        <div class="col-12">
-                            <h3>数量</h3>
-                            <input type="text" name="quantity" value="1" th:text="${quantity}"/>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label" for="inlineRadio1">早餐</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                       value="option2">
+                                <label class="form-check-label" for="inlineRadio2">午餐</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                       value="option3">
+                                <label class="form-check-label" for="inlineRadio2">晚餐</label>
+                            </div>
                         </div>
 
                         <div class="col-12">
                             <h3>最终结果</h3>
-                            <input disabled type="text" name="ans" value="0" th:text="${ans}"/>
+                            <input disabled type="text" name="ans" value=""/>
                         </div>
 
                         <div class="col-12">
                             <ul class="actions">
-                                <li><input type="submit" value="生成随机数" class="primary" th:formaction="@{/randomNumber/ans}"/></li>
+                                <li><input type="submit" value="生成答案" class="primary"
+                                           th:formaction="@{/randomNumber/ans}"/></li>
                                 <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}"/></li>
                                 <li><input type="reset" value="清空" class="button"/></li>
                             </ul>
@@ -58,8 +62,6 @@
                     </div>
                 </form>
             </section>
-        </div>
-    </section>
 
 </div>
-<footer th:replace="/footer"></footer>
+<footer th:replace="footer"></footer>
