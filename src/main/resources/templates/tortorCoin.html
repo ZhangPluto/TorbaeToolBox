@@ -25,21 +25,20 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-sm-12" id="transferPart">
-                        <h2>点击按钮以转账：</h2>
-                        <button type="button" class="btn btn-outline-primary" id="transferButton"><img
-                                id="CoinIllustration" th:src="@{/images/fiftyCentsIllustration.png}"
+                    <div class="col-lg-6 col-sm-12 transferPart">
+                        <button type="button" class="btn transferButton"><img
+                                class="CoinIllustration" th:src="@{/images/fiftyCentsIllustration.png}"
                                 alt="0.5 Tortor Coin Icon Image Not Found"></button>
-                        <button type="button" class="btn btn-outline-primary" id="transferButton"><img
-                                id="CoinIllustration" th:src="@{/images/oneTorCoinIllustration.png}"
+                        <button type="button" class="btn transferButton"><img
+                                class="CoinIllustration" th:src="@{/images/oneTorCoinIllustration.png}"
                                 alt="1 Tortor Coin Icon Image Not Found"></button>
-                        <button type="button" class="btn btn-outline-primary" id="transferButton"><img
-                                id="CoinIllustration" th:src="@{/images/twoTorCoinIllustration.png}"
+                        <button type="button" class="btn transferButton"><img
+                                class="CoinIllustration" th:src="@{/images/twoTorCoinIllustration.png}"
                                 alt="2 Tortor Coin Icon Image Not Found"></button>
                     </div>
                 </div>
                 <div class="row">
-                    <table class="table table-striped">
+                    <table class="table table-striped coinHistoryTable">
                         <thead>
                         <tr>
                             <th scope="col">#</th>

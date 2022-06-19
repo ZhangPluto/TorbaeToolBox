@@ -30,8 +30,7 @@
                     <div class="row gtr-uniform">
                         <div class="col-12">
                             <h3>候选项</h3>
-                            <textarea class="form-control" id="exampleFormControlTextarea1"
-                                      placeholder="在这里输入后选项，使用换行分割" rows="3"></textarea>
+                            <textarea placeholder="在这里输入后选项，使用换行分割" rows="3"></textarea>
                         </div>
 
                         <div class="col-12">
@@ -39,13 +38,10 @@
                             <input disabled type="text" name="ans" value=""/>
                         </div>
 
-                        <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="生成答案" class="primary"
-                                           th:formaction="@{/randomNumber/ans}"/></li>
-                                <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}"/></li>
-                                <li><input type="reset" value="清空" class="button"/></li>
-                            </ul>
+                        <div class="col-12 buttonPart">
+                            <button type="button" class="btn btn-primary conformBtn">生成结果</button>
+                            <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            <button type="reset" class="btn clearBtn">清空</button>
                         </div>
                     </div>
                 </form>

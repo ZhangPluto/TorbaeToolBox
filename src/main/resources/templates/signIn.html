@@ -31,10 +31,11 @@
                             <input type="password" name="signInRedoPassword" id="signInRedoPassword" value="" placeholder="重复密码"/>
                         </div>
                         <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="注册" class="primary"  th:formaction="@{/logIn}" th:formmethod="POST"/></li>
-                                <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}" th:formmethod="GET"/></li>
-                            </ul>
+                            <div class="col-12 buttonPart">
+                                <button type="button" class="btn btn-primary conformBtn">注册</button>
+                                <button type="button" class="btn backToIndexBtn">返回首页</button>
+                                <button type="reset" class="btn clearBtn">清空</button>
+                            </div>
                         </div>
                     </div>
                 </form>

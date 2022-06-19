@@ -25,11 +25,11 @@
                             <input type="password" name="logInPassword" id="logInPassword" value="" placeholder="密码"/>
                         </div>
                         <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="登录" class="primary" th:formaction="@{/logIn}"/></li>
-                                <li><input type="reset" value="重新输入"/></li>
-                                <li><input type="submit" th:formaction="@{/signIn}" value="没有账号？在这里注册"/></li>
-                            </ul>
+                            <div class="col-12 buttonPart">
+                                <button type="button" class="btn btn-primary conformBtn">登录</button>
+                                <button type="button" class="btn backToIndexBtn">没有账号？在这里注册</button>
+                                <button type="reset" class="btn clearBtn">清空</button>
+                            </div>
                         </div>
                     </div>
                 </form>

@@ -1,0 +1,20 @@
+.eatTimePart{
+    display: flex;
+}
+.eatTimeSelector{
+    width: 33%;
+}
+@media screen and (max-width: 480px) {
+    .eatTimePart{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+
+    }
+    .timeSelectorText{
+        letter-spacing: 20px;
+    }
+    .eatTimeSelector{
+        width: 100%;
+    }
+}

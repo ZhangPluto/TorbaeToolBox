@@ -1,4 +1,5 @@
 <head th:replace="header :: head">
+    <html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 </head>
 <nav th:replace="header :: menu(3)">
 </nav>
@@ -30,32 +31,30 @@
                     <div class="row gtr-uniform">
                         <div class="col-12">
                             <h3>起始值</h3>
-                            <input type="text" name="beginValue" value="0" th:text="${beginValue}"/>
+                            <input type="text" name="beginValue" value="0"/>
                         </div>
 
                         <div class="col-12">
                             <h3>末尾值</h3>
-                            <input type="text" name="endValue" value="0" th:text="${endValue}"/>
+                            <input type="text" name="endValue" value="0"/>
                         </div>
 
                         <div class="col-12">
                             <h3>数量</h3>
-                            <input type="text" name="quantity" value="1" th:text="${quantity}"/>
+                            <input type="text" name="quantity" value="1"/>
                         </div>
 
                         <div class="col-12">
                             <h3>最终结果</h3>
-                            <input disabled type="text" name="ans" value="0" th:text="${ans}"/>
+                            <input disabled type="text" name="ans" value="0"/>
                         </div>
 
-                        <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="生成随机数" class="primary"
-                                           th:formaction="@{/randomNumber/ans}"/></li>
-                                <li><input type="submit" value="回到首页" class="button" th:formaction="@{/index}"/></li>
-                                <li><input type="reset" value="清空" class="button"/></li>
-                            </ul>
+                        <div class="col-12 buttonPart">
+                            <button type="button" class="btn btn-primary conformBtn">生成结果</button>
+                            <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            <button type="reset" class="btn clearBtn">清空</button>
                         </div>
+
                     </div>
                 </form>
             </section>

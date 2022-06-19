@@ -1,0 +1,109 @@
+/*Header and Footer*/
+.title {
+    border: 0;
+    color: #ffffff;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+#footer .inner {
+    padding-top: 3em;
+    height: 6.75em;
+}
+
+/*NavBar*/
+.navbar-collapse {
+    flex-grow: 0;
+}
+.nav-link:hover, .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.55);
+}
+.navbar-toggler {
+    font-size: x-small;
+}
+.navbar-toggler:after {
+    border-radius: 0;
+}
+.navbar-nav .nav-link.active {
+    border: 0;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5em
+}
+.nav-link, .dropdown-item {
+    border: 0;
+    color: rgba(255, 255, 255, 0.35);
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+}
+.dropdown-menu.show {
+    --bs-dropdown-link-hover-bg: #6f53a0;
+    --bs-dropdown-bg: #5E42A6;
+}
+ul li {
+    margin-left: 0;
+}
+#pageIllustration {
+    padding-top: 1em;
+    width: 450px;
+    height: 450px;
+}
+h1.major {
+    margin: 0 0 0.5em 0;
+    text-align: center;
+}
+.row {
+    margin-top: 30px;
+}
+
+/*alert box*/
+.alert-success {
+    --bs-alert-bg: #ffd4e0;
+    --bs-alert-color: #be3e61;
+}
+hr {
+    transition: max-width 0.2s ease;
+    background-image: linear-gradient(to right, #5e42a6, #b74e91);
+    border-radius: 0.2em;
+    height: 0.05em;
+    border-bottom: solid 1px;
+    opacity: 1;
+}
+
+/*Button*/
+
+.conformBtn, .backToIndexBtn, .clearBtn{
+    --bs-btn-border-radius: 3rem;
+    margin-right: 10px;
+    --bs-btn-font-size: 0.6rem;
+    width: 33%;
+}
+.buttonPart{
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .buttonPart{
+        flex-direction: column;
+        text-align: center;
+    }
+    .conformBtn, .backToIndexBtn, .clearBtn{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #pageIllustration {
+        padding-top: 1em;
+        width: 300px;
+        height: 300px;
+    }
+}

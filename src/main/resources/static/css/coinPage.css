@@ -1,0 +1,40 @@
+/*CoinPage*/
+.coinHistoryTable {
+    --bs-table-bg: #FFBECF;
+    margin: 0 -1.5em 0 1.5em;
+    --bs-table-color: #96465C;
+}
+
+.CoinIllustration {
+    height: 100%;
+    width: 100%;
+}
+
+.coinHistoryTable > tbody > tr:nth-of-type(odd) > * {
+    color: #8e4c4b;
+}
+.transferPart {
+    text-align: center;
+    display: flex;
+}
+
+#userBalance {
+    color: #e9a3b6;
+}
+
+.transferButton {
+    height: 10em;
+    width: 10em;
+}
+.transferButton:after{
+    border-radius: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .coinHistoryTable {
+        margin: 0 1.5em 0 0.8em;
+    }
+    .transferPart{
+        margin-top: 20px;
+    }
+}
