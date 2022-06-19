@@ -11,10 +11,8 @@
         text-align: center;
 
     }
-    .timeSelectorText{
-        letter-spacing: 20px;
-    }
     .eatTimeSelector{
         width: 100%;
     }
+
 }
