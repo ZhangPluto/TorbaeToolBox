@@ -1,6 +1,6 @@
 <head th:replace="header :: head">
 </head>
-<nav th:replace="header :: menu(3)">
+<nav th:replace="navBar :: menu(3)">
 </nav>
 <!-- Wrapper -->
 <div id="wrapper">
@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="col-12 buttonPart">
-                            <button type="button" class="btn btn-primary conformBtn">生成结果</button>
+                            <button type="submit" class="btn btn-primary conformBtn">生成结果</button>
                             <button type="button" class="btn backToIndexBtn">返回首页</button>
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
@@ -67,5 +67,5 @@
     </section>
 </div>
 
-<footer th:replace="footer"></footer>
-<div th:replace="scriptFooter"></div>
+<footer th:replace="signature"></footer>
+<div th:replace="footer"></div>

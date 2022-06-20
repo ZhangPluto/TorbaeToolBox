@@ -59,4 +59,8 @@ public class IndexController {
     public String randomElement(){
         return "randomElement";
     }
+    @GetMapping("/icu")
+    public String icu(){
+        return "icu";
+    }
 }
