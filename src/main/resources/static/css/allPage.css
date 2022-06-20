@@ -93,6 +93,25 @@ hr {
     display: flex;
 }
 
+/*input type=["number"]*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+}
+input[type="number"]{
+    -moz-appearance: none !important;
+}
+
+.inputValidate{
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: solid 1px rgba(255, 255, 255, 0.15);
+    width: 100%;
+    border-radius: 0.25em;
+    height: 2.75em;
+    padding: 0 1em;
+}
+
 @media screen and (max-width: 480px) {
     .buttonPart{
         flex-direction: column;

@@ -14,13 +14,14 @@
             <h1 class="major">
                 随机元素
             </h1>
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <h2 class="alert-heading">欢迎使用随机元素功能</h2>
                 <p>在这个页面，您将被允许输入一些您的后选项，系统将帮您解决您的选择困难症。</p>
                 <p>您可以在下方的输入框中输入您的选项，用换行键分割不同的元素，随后，系统将帮您做出决定</p>
                 <p>请记住，第一次生成的答案一定是对的</p>
                 <hr>
                 <h3 class="alert-heading">祝您得到您最想要的答案</h3>
+
             </div>
 
 
@@ -35,7 +36,7 @@
 
                         <div class="col-12">
                             <h3>最终结果</h3>
-                            <input disabled type="text" name="ans" value=""/>
+                            <input disabled type="text" name="ans" placeholder="结果" value=""/>
                         </div>
 
                         <div class="col-12 buttonPart">
@@ -48,7 +49,7 @@
             </section>
         </div>
     </section>
-
 </div>
 
 <footer th:replace="footer"></footer>
+<div th:replace="scriptFooter"></div>
