@@ -31,31 +31,33 @@
                     <div class="row gtr-uniform">
                         <div class="col-12">
                             <h3>起始值</h3>
-                            <input type="number" class="inputValidate" id="beginValue" name="beginValue" value="" placeholder="起始值"
-                                   oninput="value=value.replace(/[^\d]/g,'')" required/>
+                            <input type="number" class="inputValidate" id="beginValue" name="beginValue" value=""
+                                   placeholder="起始值"
+                                   oninput="value=value.replace(/[^\d]/g,'')"/>
                         </div>
 
                         <div class="col-12">
                             <h3>末尾值</h3>
                             <input class="inputValidate" type="number" id="endValue" name="endValue" value=""
                                    placeholder="末尾值"
-                                   oninput="value=value.replace(/[^\d]/g,'')" required/>
+                                   oninput="value=value.replace(/[^\d]/g,'')"/>
                         </div>
 
                         <div class="col-12">
                             <h3>数量</h3>
                             <input type="number" class="inputValidate" id="quantity" name="quantity" value=""
                                    placeholder="数量"
-                                   oninput="value=value.replace(/[^\d]/g,'')" required/>
+                                   oninput="value=value.replace(/[^\d]/g,'')"/>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-12" id="idGetAns">
                             <h3>最终结果</h3>
                             <input disabled type="text" name="ans" id="ans" value="" placeholder="结果"/>
                         </div>
 
                         <div class="col-12 buttonPart">
-                            <button type="submit" class="btn btn-primary conformBtn">生成结果</button>
+                            <button type="button" class="btn btn-primary conformBtn" onclick="getRandomNumber()">生成结果
+                            </button>
                             <button type="button" class="btn backToIndexBtn">返回首页</button>
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
@@ -68,4 +70,46 @@
 </div>
 
 <footer th:replace="signature"></footer>
+<script type="text/javascript">
+    function getRandomNumber() {
+        let beginValue = document.querySelector("#beginValue").value
+        let endValue = document.querySelector("#endValue").value
+        const quantity = document.querySelector("#quantity").value
+        const ans = new Array(0)
+        if (dataValidation(beginValue,endValue,quantity)){
+            for (let i = 0; i < quantity; i++){
+                // const num = parseInt(Math.random() * (endValue - beginValue + 1) + beginValue).toString()
+                const num = Math.ceil(Math.random() * (endValue - beginValue + 1) + beginValue).toString()
+                ans.push(num)
+            }
+            document.getElementById("ans").value = ans.toString()
+        }
+
+    }
+
+    function dataValidation(beginValue, endValue, quantity) {
+        if (endValue === "" || beginValue === "" || quantity === "") {
+            window.alert("监测到尚未填入的字段，请填完后再试")
+            return false
+        }
+        if (beginValue > endValue){
+            window.alert("起始值不可大于末尾值")
+        }
+        if (endValue - beginValue + 1 < quantity) {
+            window.alert("所需随机数范围过大")
+            document.querySelector("#quantity").focus();
+            return false
+        }
+        if (endValue === beginValue) {
+            window.alert("起始值和末尾值不可相同")
+            return false
+        }
+        if (beginValue < 0 || endValue < 0 || quantity < 0){
+            window.alert("监测到小于零的数值，请重新输入")
+            return false
+        }
+        return true
+    }
+
+</script>
 <div th:replace="footer"></div>
