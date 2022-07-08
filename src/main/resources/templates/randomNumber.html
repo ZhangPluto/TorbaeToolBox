@@ -58,7 +58,10 @@
                         <div class="col-12 buttonPart">
                             <button type="button" class="btn btn-primary conformBtn" onclick="getRandomNumber()">生成结果
                             </button>
-                            <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            <a th:href="@{/index}">
+                                <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            </a>
+
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
 

@@ -7,7 +7,8 @@
 
     <!-- Main -->
     <section id="main" class="wrapper">
-        <img th:src="@{/images/signInIllustration.png}" class="rounded mx-auto d-block" alt="Icon Image Not Found" id="pageIllustration">
+        <img th:src="@{/images/signInIllustration.png}" class="rounded mx-auto d-block" alt="Icon Image Not Found"
+             id="pageIllustration">
         <div class="inner">
             <h1 class="major">注册</h1>
             <!-- Form -->
@@ -28,12 +29,16 @@
                         </div>
                         <h3>重复密码</h3>
                         <div class="col">
-                            <input type="password" name="signInRedoPassword" id="signInRedoPassword" value="" placeholder="重复密码"/>
+                            <input type="password" name="signInRedoPassword" id="signInRedoPassword" value=""
+                                   placeholder="重复密码"/>
                         </div>
                         <div class="col-12">
                             <div class="col-12 buttonPart">
                                 <button type="button" class="btn btn-primary conformBtn">注册</button>
-                                <button type="button" class="btn backToIndexBtn">返回首页</button>
+                                <a th:href="@{/index}">
+                                    <button type="button" class="btn backToIndexBtn">返回首页</button>
+                                </a>
+
                                 <button type="reset" class="btn clearBtn">清空</button>
                             </div>
                         </div>

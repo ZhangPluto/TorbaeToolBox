@@ -42,7 +42,9 @@
                         <div class="col-12 buttonPart">
                             <button type="button" class="btn btn-primary conformBtn" onclick="getRandomElement()">生成结果
                             </button>
-                            <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            <a th:href="@{/index}">
+                                <button type="button" class="btn backToIndexBtn">返回首页</button>
+                            </a>
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
                     </div>
@@ -57,7 +59,7 @@
     function getRandomElement() {
         const allElement = document.querySelector("#allElement").value
         const splitElement = allElement.split(/[.,\s\n，;。]/)
-        const randomIndex = Math.round(Math.random() * splitElement.length)-1
+        const randomIndex = Math.round(Math.random() * splitElement.length) - 1
         console.log(randomIndex)
         document.querySelector("#ans").value = splitElement[randomIndex]
     }
