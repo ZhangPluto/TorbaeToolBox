@@ -17,7 +17,7 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <h2 class="alert-heading">欢迎使用随机元素功能</h2>
                 <p>在这个页面，您将被允许输入一些您的后选项，系统将帮您解决您的选择困难症。</p>
-                <p>您可以在下方的输入框中输入您的选项，用逗号分割不同的元素，随后，系统将帮您做出决定</p>
+                <p>您可以在下方的输入框中输入您的选项，用逗号，句号，分号，空格，或是换行符分割不同的元素，随后，系统将帮您做出决定</p>
                 <p>请记住，第一次生成的答案一定是对的</p>
                 <hr>
                 <h3 class="alert-heading">祝您得到您最想要的答案</h3>
@@ -56,9 +56,9 @@
 <script type="text/javascript">
     function getRandomElement() {
         const allElement = document.querySelector("#allElement").value
-        const splitElement = allElement.split(",")
-        const randomIndex = Math.floor(Math.random() * (splitElement.length + 1))
-        // console.log(splitElement)
+        const splitElement = allElement.split(/[.,\s\n，;。]/)
+        const randomIndex = Math.round(Math.random() * splitElement.length)-1
+        console.log(randomIndex)
         document.querySelector("#ans").value = splitElement[randomIndex]
     }
 
