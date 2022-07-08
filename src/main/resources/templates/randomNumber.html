@@ -72,17 +72,19 @@
 <footer th:replace="signature"></footer>
 <script type="text/javascript">
     function getRandomNumber() {
-        let beginValue = document.querySelector("#beginValue").value
-        let endValue = document.querySelector("#endValue").value
-        const quantity = document.querySelector("#quantity").value
+        let beginValue = parseInt(document.querySelector("#beginValue").value)
+        let endValue = parseInt(document.querySelector("#endValue").value)
+        const quantity = parseInt(document.querySelector("#quantity").value)
         const ans = new Array(0)
-        if (dataValidation(beginValue,endValue,quantity)){
-            for (let i = 0; i < quantity; i++){
-                // const num = parseInt(Math.random() * (endValue - beginValue + 1) + beginValue).toString()
-                const num = Math.ceil(Math.random() * (endValue - beginValue + 1) + beginValue).toString()
-                ans.push(num)
+        // console.log(beginValue, endValue, quantity)
+        if (dataValidation(beginValue, endValue, quantity)) {
+            for (let i = 0; i < quantity; i++) {
+                let randomNum = Math.round(Math.random() * (endValue - beginValue)) + beginValue
+                ans.push(randomNum)
+                // console.log(beginValue)
             }
-            document.getElementById("ans").value = ans.toString()
+
+            document.getElementById("ans").value = ans
         }
 
     }
@@ -92,7 +94,7 @@
             window.alert("监测到尚未填入的字段，请填完后再试")
             return false
         }
-        if (beginValue > endValue){
+        if (beginValue > endValue) {
             window.alert("起始值不可大于末尾值")
         }
         if (endValue - beginValue + 1 < quantity) {
@@ -104,7 +106,7 @@
             window.alert("起始值和末尾值不可相同")
             return false
         }
-        if (beginValue < 0 || endValue < 0 || quantity < 0){
+        if (beginValue < 0 || endValue < 0 || quantity < 0) {
             window.alert("监测到小于零的数值，请重新输入")
             return false
         }
