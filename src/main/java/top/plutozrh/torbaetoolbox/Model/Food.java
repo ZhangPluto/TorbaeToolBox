@@ -9,6 +9,8 @@ package top.plutozrh.torbaetoolbox.Model;
  * @create Jul 09, 2022 23:00
  */
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 /**
@@ -16,7 +18,9 @@ import javax.persistence.*;
  *
  * @author renhaozhang
  */
-@Entity(name = "Food")
+@Entity
+@Table(name = "Food")
+@Data
 public class Food {
     @Id
     @Column(name = "Id")
@@ -34,31 +38,6 @@ public class Food {
 
     @Column(name = "Author")
     private String author;
-
-    public Food() {
-    }
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public String getDosing() {
-        return dosing;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
 
 
 }

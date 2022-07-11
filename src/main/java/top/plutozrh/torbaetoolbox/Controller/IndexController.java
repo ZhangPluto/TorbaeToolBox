@@ -47,18 +47,7 @@ public class IndexController {
     public String signIn(){
         return "signIn";
     }
-    @GetMapping("/randomNumber")
-    public String randomNumber(){
-        return "randomNumber";
-    }
-    @GetMapping("/randomFood")
-    public String randomFood(){
-        return "randomFood";
-    }
-    @GetMapping("/randomElement")
-    public String randomElement(){
-        return "randomElement";
-    }
+
     @GetMapping("/icu")
     public String icu(){
         return "icu";

@@ -14,11 +14,13 @@
             <h1 class="major">
                 随机食物
             </h1>
+
             <div class="alert alert-success" role="alert">
                 <h2 class="alert-heading">欢迎使用随机食物功能</h2>
                 <p>该功能意在帮助那些不知道吃啥的人</p>
                 <p>这里没有规则，点按钮就行了</p>
                 <p>记住，第一次出现的答案就是最适合你的</p>
+
                 <hr>
                 <h3 class="alert-heading">吃的开心！</h3>
             </div>
@@ -28,31 +30,24 @@
             <section>
                 <form method="get">
                     <div class="row gtr-uniform">
-                        <div class="col-12 eatTimePart">
-                            <div class="form-check form-check-inline eatTimeSelector">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1" required>
-                                <label class="form-check-label" for="inlineRadio1">早餐</label>
-                            </div>
-                            <div class="form-check form-check-inline eatTimeSelector">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                       value="option2" required>
-                                <label class="form-check-label" for="inlineRadio2">午餐</label>
-                            </div>
-                            <div class="form-check form-check-inline eatTimeSelector">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                                       value="option3" required>
-                                <label class="form-check-label" for="inlineRadio3">晚餐</label>
-                            </div>
+                        <div class="col-4">
+                            <h3>菜名</h3>
+                            <input disabled type="text" th:value="test"/>
                         </div>
-
+                        <div class="col-4">
+                            <h3>菜谱作者</h3>
+                            <input disabled type="text" th:id="foodAuthor"/>
+                        </div>
+                        <div class="col-4">
+                            <h3>菜谱链接</h3>
+                            <input disabled type="text" th:id="foodLink"/>
+                        </div>
                         <div class="col-12">
-                            <h3>最终结果</h3>
-                            <input disabled type="text" name="ans" value=""/>
+                            <h3>基础配料</h3>
+                            <input disabled type="text" th:id="foodDosing"/>
                         </div>
-
                         <div class="col-12 buttonPart">
-                            <button type="submit" class="btn btn-primary conformBtn">生成结果</button>
+                            <button type="submit" class="btn btn-primary conformBtn" onclick="getRandomFood()">生成结果</button>
                             <button type="button" class="btn backToIndexBtn" onclick="goIndex()">返回首页</button>
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
@@ -63,4 +58,12 @@
     </section>
 </div>
 <footer th:replace="signature"></footer>
+<script type="text/javascript">
+    function goIndex() {
+        window.location.href="/index"
+    }
+    function getRandomFood() {
+        window.alert("test")
+    }
+</script>
 <div th:replace="footer"></div>
