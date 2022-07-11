@@ -16,20 +16,24 @@ import top.plutozrh.torbaetoolbox.Dao.RandomFoodDao;
 import top.plutozrh.torbaetoolbox.Model.Food;
 import top.plutozrh.torbaetoolbox.Service.FoodService;
 
+import java.util.List;
+
 /**
  * @author renhaozhang
  */
 @Service
 public class FoodServiceImpl implements FoodService {
-    private final RandomFoodDaoImpl randomFoodDao;
+    private final RandomFoodDaoImpl randomFoodDaoImpl;
     @Autowired
-    public FoodServiceImpl(RandomFoodDaoImpl randomFoodDao) {
-        this.randomFoodDao = randomFoodDao;
+    public FoodServiceImpl(RandomFoodDaoImpl randomFoodDaoImpl) {
+        this.randomFoodDaoImpl = randomFoodDaoImpl;
     }
 
+    @Autowired
+
+
     @Override
-    public Food getRandomFood() {
-        randomFoodDao.getRandomFood();
-        return new Food();
+    public List<Food> getRandomFood() {
+        return randomFoodDaoImpl.getRandomFood();
     }
 }

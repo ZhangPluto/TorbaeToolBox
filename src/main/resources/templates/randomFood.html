@@ -1,4 +1,6 @@
-<head th:replace="header :: head">
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="header">
 </head>
 <nav th:replace="navBar :: menu(3)">
 </nav>
@@ -28,26 +30,30 @@
 
             <!-- Form -->
             <section>
-                <form method="get">
-                    <div class="row gtr-uniform">
+                <form>
+                    <div class="row gtr-uniform" th:fragment="randomFoodPart">
                         <div class="col-4">
                             <h3>菜名</h3>
-                            <input disabled type="text" th:value="test"/>
+                            <input disabled type="text" th:value="${foodName}"/>
+                            <p th:text="${foodName}"></p>
                         </div>
                         <div class="col-4">
                             <h3>菜谱作者</h3>
-                            <input disabled type="text" th:id="foodAuthor"/>
+                            <input disabled type="text" th:value="${foodAuthor}"/>
+                            <p th:text="${foodAuthor}"></p>
                         </div>
                         <div class="col-4">
                             <h3>菜谱链接</h3>
-                            <input disabled type="text" th:id="foodLink"/>
+                            <input disabled type="text" th:value="${foodLink}"/>
+                            <p th:text="${foodLink}"></p>
                         </div>
                         <div class="col-12">
                             <h3>基础配料</h3>
-                            <input disabled type="text" th:id="foodDosing"/>
+                            <input disabled type="text" th:value="${foodDosing}"/>
+                            <p th:text="${foodDosing}"></p>
                         </div>
                         <div class="col-12 buttonPart">
-                            <button type="submit" class="btn btn-primary conformBtn" onclick="getRandomFood()">生成结果</button>
+                            <button type="button" class="btn btn-primary conformBtn" onclick="getRandomFood()">生成结果</button>
                             <button type="button" class="btn backToIndexBtn" onclick="goIndex()">返回首页</button>
                             <button type="reset" class="btn clearBtn">清空</button>
                         </div>
@@ -63,7 +69,17 @@
         window.location.href="/index"
     }
     function getRandomFood() {
-        window.alert("test")
+        $.ajax({
+            url: '/randomFood/getRandomFood',
+            type: 'get',
+            async: false,
+            error: function () {
+                window.alert("抱歉，服务器出错了。")
+            },
+            success: function (data){
+                alert(data)
+            }
+        })
     }
 </script>
 <div th:replace="footer"></div>

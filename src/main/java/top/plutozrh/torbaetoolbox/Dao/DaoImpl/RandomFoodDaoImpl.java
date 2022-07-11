@@ -9,6 +9,7 @@ package top.plutozrh.torbaetoolbox.Dao.DaoImpl;
  * @create Jul 10, 2022 03:48
  */
 
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,6 +20,8 @@ import top.plutozrh.torbaetoolbox.Model.Food;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Random;
 
 /**
  * @author renhaozhang
@@ -26,7 +29,8 @@ import java.sql.SQLException;
 @Repository
 public class RandomFoodDaoImpl implements RandomFoodDao, RowMapper<Food> {
     private final JdbcTemplate jdbcTemplate;
-
+    private int getRandomNumber;
+    private List<Food> randomFood;
     @Autowired
     public RandomFoodDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -42,11 +46,20 @@ public class RandomFoodDaoImpl implements RandomFoodDao, RowMapper<Food> {
         return food;
     }
     @Override
-    public Food getRandomFood() {
-        String sql = "SELECT * FROM FOOD WHERE ID=2";
-        RowMapper<Food> rowMapper = new BeanPropertyRowMapper<Food>(Food.class);
-        System.out.println(jdbcTemplate.query(sql,rowMapper));
-        return new Food();
+    public List<Food> getRandomFood() {
+        try {
+            String getMaxIdSql = "SELECT MAX(id) FROM food";
+            RowMapper<Food> rowMapper = new BeanPropertyRowMapper<Food>(Food.class);
+            Integer maxRowNumber = jdbcTemplate.queryForObject(getMaxIdSql,Integer.class);
+            if (maxRowNumber != null){
+                getRandomNumber = new Random().nextInt(maxRowNumber) + 1;
+            }
+            String getRandomFoodSql = "SELECT * FROM food where id=" + getRandomNumber;
+            randomFood = jdbcTemplate.query(getRandomFoodSql,rowMapper);
+        } catch (Exception e){
+            System.err.println(e.toString());
+        }
+        return randomFood;
     }
 }
 
