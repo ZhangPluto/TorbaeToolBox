@@ -78,11 +78,16 @@ hr {
 }
 
 /*Button*/
-.conformBtn, .backToIndexBtn, .clearBtn{
+.conformBtn, .backToIndexBtn, .clearBtn, .copyBtn{
     --bs-btn-border-radius: 3rem;
     margin-right: 10px;
     --bs-btn-font-size: 0.6rem;
     width: 33%;
+}
+
+.copyBtn{
+    --bs-btn-bg: #C6758F;
+    --bs-btn-hover-bg: #D98098;
 }
 
 .conformBtn{

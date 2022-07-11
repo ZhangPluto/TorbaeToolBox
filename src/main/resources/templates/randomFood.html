@@ -31,31 +31,28 @@
             <!-- Form -->
             <section>
                 <form>
-                    <div class="row gtr-uniform" th:fragment="randomFoodPart">
+                    <div class="row gtr-uniform" th:fragment="randomFoodPart" th:id="foodInfo">
                         <div class="col-4">
                             <h3>菜名</h3>
                             <input disabled type="text" th:value="${foodName}"/>
-                            <p th:text="${foodName}"></p>
                         </div>
                         <div class="col-4">
                             <h3>菜谱作者</h3>
                             <input disabled type="text" th:value="${foodAuthor}"/>
-                            <p th:text="${foodAuthor}"></p>
                         </div>
                         <div class="col-4">
                             <h3>菜谱链接</h3>
-                            <input disabled type="text" th:value="${foodLink}"/>
-                            <p th:text="${foodLink}"></p>
+                            <input disabled type="text" th:value="${foodLink}" th:id="linkInput"/>
                         </div>
                         <div class="col-12">
                             <h3>基础配料</h3>
                             <input disabled type="text" th:value="${foodDosing}"/>
-                            <p th:text="${foodDosing}"></p>
                         </div>
                         <div class="col-12 buttonPart">
-                            <button type="button" class="btn btn-primary conformBtn" onclick="getRandomFood()">生成结果</button>
+                            <button type="button" class="btn btn-primary conformBtn" onclick="getRandomFood()">生成结果
+                            </button>
+                            <button type="button" class="btn copyBtn" onclick="copyLink()" data-toggle="tooltip" th:id="copyBtn">复制链接</button>
                             <button type="button" class="btn backToIndexBtn" onclick="goIndex()">返回首页</button>
-                            <button type="reset" class="btn clearBtn">清空</button>
                         </div>
                     </div>
                 </form>
@@ -65,21 +62,37 @@
 </div>
 <footer th:replace="signature"></footer>
 <script type="text/javascript">
+
     function goIndex() {
-        window.location.href="/index"
+        window.location.href = "/index"
     }
+
     function getRandomFood() {
+        document.querySelector("#copyBtn").setAttribute('title','')
         $.ajax({
             url: '/randomFood/getRandomFood',
             type: 'get',
-            async: false,
+            async: true,
             error: function () {
                 window.alert("抱歉，服务器出错了。")
             },
-            success: function (data){
-                alert(data)
+            success: function (data) {
+                $("#foodInfo").html(data);
             }
         })
     }
+    function copyLink() {
+        const linkInfo = document.querySelector("#linkInput").value;
+        if (linkInfo === ""){
+            window.alert("没有链接复制啥啊？您配么？三元一把十元三把您配几把？")
+            return
+        }
+        if (navigator.clipboard){
+            navigator.clipboard.writeText(linkInfo)
+            document.querySelector("#copyBtn").setAttribute('title','复制成功')
+            $('#copyBtn').tooltip('show')
+        }
+    }
+
 </script>
 <div th:replace="footer"></div>
