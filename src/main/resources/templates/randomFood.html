@@ -22,7 +22,6 @@
                 <p>该功能意在帮助那些不知道吃啥的人</p>
                 <p>这里没有规则，点按钮就行了</p>
                 <p>记住，第一次出现的答案就是最适合你的</p>
-
                 <hr>
                 <h3 class="alert-heading">吃的开心！</h3>
             </div>
@@ -32,15 +31,15 @@
             <section>
                 <form>
                     <div class="row gtr-uniform" th:fragment="randomFoodPart" th:id="foodInfo">
-                        <div class="col-4">
+                        <div class="col-12">
                             <h3>菜名</h3>
                             <input disabled type="text" th:value="${foodName}"/>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12">
                             <h3>菜谱作者</h3>
                             <input disabled type="text" th:value="${foodAuthor}"/>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12">
                             <h3>菜谱链接</h3>
                             <input disabled type="text" th:value="${foodLink}" th:id="linkInput"/>
                         </div>
@@ -54,11 +53,15 @@
                             <button type="button" class="btn copyBtn" onclick="copyLink()" data-toggle="tooltip" th:id="copyBtn">复制链接</button>
                             <button type="button" class="btn backToIndexBtn" onclick="goIndex()">返回首页</button>
                         </div>
+                        <p style="font-size: 16px">*所有数据均来自下厨房，仅供个人参考，如有问题，请联系<i>17ggez@gmail.com</i>与我反馈</p>
+
                     </div>
                 </form>
             </section>
         </div>
+
     </section>
+
 </div>
 <footer th:replace="signature"></footer>
 <script type="text/javascript">
@@ -84,7 +87,7 @@
     function copyLink() {
         const linkInfo = document.querySelector("#linkInput").value;
         if (linkInfo === ""){
-            window.alert("没有链接复制啥啊？您配么？三元一把十元三把您配几把？")
+            window.alert("没有链接复制啥啊？先去生成一个呗？")
             return
         }
         if (navigator.clipboard){

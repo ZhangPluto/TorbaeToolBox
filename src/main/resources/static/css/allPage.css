@@ -122,7 +122,7 @@ input[type="number"]{
         flex-direction: column;
         text-align: center;
     }
-    .conformBtn, .backToIndexBtn, .clearBtn{
+    .conformBtn, .backToIndexBtn, .clearBtn, .copyBtn{
         margin-top: 20px;
         width: 100%;
     }
