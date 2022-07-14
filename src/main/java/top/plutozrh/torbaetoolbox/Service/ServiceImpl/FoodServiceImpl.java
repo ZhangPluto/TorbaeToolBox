@@ -23,10 +23,10 @@ import java.util.List;
  */
 @Service
 public class FoodServiceImpl implements FoodService {
-    private final RandomFoodDaoImpl randomFoodDaoImpl;
+    private final RandomFoodDao randomFoodDao;
     @Autowired
-    public FoodServiceImpl(RandomFoodDaoImpl randomFoodDaoImpl) {
-        this.randomFoodDaoImpl = randomFoodDaoImpl;
+    public FoodServiceImpl(RandomFoodDao randomFoodDao) {
+        this.randomFoodDao = randomFoodDao;
     }
 
     @Autowired
@@ -34,6 +34,6 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public List<Food> getRandomFood() {
-        return randomFoodDaoImpl.getRandomFood();
+        return randomFoodDao.getRandomFood();
     }
 }
